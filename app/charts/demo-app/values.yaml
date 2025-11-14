@@ -1,0 +1,16 @@
+image:
+  repository: ghcr.io/SEU_USUARIO/demo-app
+  tagV1: "v1"
+  tagV2: "v2"
+  pullPolicy: IfNotPresent
+
+service:
+  name: demo-app
+  type: ClusterIP
+  port: 80
+
+aws:
+  endpoint: "http://localstack:4566"
+  region: "us-east-1"
+  accessKey: "test"
+  secretKey: "test"

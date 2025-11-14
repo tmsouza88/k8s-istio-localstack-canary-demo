@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app-v2
+  labels:
+    app: demo-app
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: demo-app
+        version: v2
+    spec:
+      containers:
+        - name: demo-app
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tagV2 }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+          env:
+            - name: AWS_ENDPOINT
+              value: {{ .Values.aws.endpoint | quote }}
+            - name: AWS_REGION
+              value: {{ .Values.aws.region | quote }}
+            - name: AWS_ACCESS_KEY_ID
+              value: {{ .Values.aws.accessKey | quote }}
+            - name: AWS_SECRET_ACCESS_KEY
+              value: {{ .Values.aws.secretKey | quote }}
+            - name: APP_VERSION
+              value: "v2"
