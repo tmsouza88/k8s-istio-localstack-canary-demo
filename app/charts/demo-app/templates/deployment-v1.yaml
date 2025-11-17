@@ -20,17 +20,21 @@ spec:
       containers:
         - name: demo-app
           image: "{{ .Values.image.repository }}:{{ .Values.image.tagV1 }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
           env:
-            - name: AWS_ENDPOINT
-              value: {{ .Values.aws.endpoint | quote }}
-            - name: AWS_REGION
-              value: {{ .Values.aws.region | quote }}
-            - name: AWS_ACCESS_KEY_ID
-              value: {{ .Values.aws.accessKey | quote }}
-            - name: AWS_SECRET_ACCESS_KEY
-              value: {{ .Values.aws.secretKey | quote }}
+#            - name: AWS_ENDPOINT
+#              value: {{ .Values.aws.endpoint | quote }}
+#            - name: AWS_REGION
+#              value: {{ .Values.aws.region | quote }}
+#            - name: AWS_ACCESS_KEY_ID
+#              value: {{ .Values.aws.accessKey | quote }}
+#            - name: AWS_SECRET_ACCESS_KEY
+#              value: {{ .Values.aws.secretKey | quote }}
+#            - name: S3_BUCKET
+#              value: {{ .Values.s3.bucket | quote }}
+#            - name: SQS_QUEUE_NAME
+#              value: {{ .Values.sqs.queueName | quote }}
             - name: APP_VERSION
               value: "v1"

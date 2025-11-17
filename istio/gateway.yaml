@@ -2,6 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: Gateway
 metadata:
   name: demo-app-gateway
+  namespace: istio-system
 spec:
   selector:
     istio: ingressgateway

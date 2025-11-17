@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora v{{ version }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="header">
+      <h1>Calculadora (v{{ version }})</h1>
+    </div>
+    
+    <div class="display" id="display">0</div>
+    
+    <div class="buttons">
+      <button class="btn btn-clear" onclick="clearDisplay()">C</button>
+      <button class="btn btn-operator" onclick="appendToDisplay('/')">/</button>
+      <button class="btn btn-operator" onclick="appendToDisplay('*')">×</button>
+      <button class="btn btn-operator" onclick="backspace()">←</button>
+      
+      <button class="btn" onclick="appendToDisplay('7')">7</button>
+      <button class="btn" onclick="appendToDisplay('8')">8</button>
+      <button class="btn" onclick="appendToDisplay('9')">9</button>
+      <button class="btn btn-operator" onclick="appendToDisplay('-')">-</button>
+      
+      <button class="btn" onclick="appendToDisplay('4')">4</button>
+      <button class="btn" onclick="appendToDisplay('5')">5</button>
+      <button class="btn" onclick="appendToDisplay('6')">6</button>
+      <button class="btn btn-operator" onclick="appendToDisplay('+')">+</button>
+      
+      <button class="btn" onclick="appendToDisplay('1')">1</button>
+      <button class="btn" onclick="appendToDisplay('2')">2</button>
+      <button class="btn" onclick="appendToDisplay('3')">3</button>
+      <button class="btn btn-equals" onclick="calculate()" style="grid-row: span 2;">=</button>
+      
+      <button class="btn btn-zero" onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
+      <button class="btn" onclick="appendToDisplay('.')">.</button>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

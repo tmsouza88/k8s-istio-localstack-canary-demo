@@ -2,11 +2,12 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: demo-app
+  namespace: default
 spec:
   hosts:
     - "*"
   gateways:
-    - demo-app-gateway
+    - istio-system/demo-app-gateway
   http:
     - route:
         - destination:

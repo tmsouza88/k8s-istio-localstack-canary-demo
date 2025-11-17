@@ -1,7 +1,7 @@
 image:
-  repository: ghcr.io/SEU_USUARIO/demo-app
+  repository: docker.io/tmsouza88/demo-calculator
   tagV1: "v1"
-  tagV2: "v2"
+  tagV2: "v1"
   pullPolicy: IfNotPresent
 
 service:
@@ -14,3 +14,9 @@ aws:
   region: "us-east-1"
   accessKey: "test"
   secretKey: "test"
+
+s3:
+  bucket: "demo-bucket"
+
+sqs:
+  queueName: "demo-queue"
